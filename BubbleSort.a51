@@ -1,6 +1,6 @@
 ;===============================================================================
 ; BubbleSort
-; R0   - size of the array
+; R0   - array size - 1 (inner loop compares current and next element)
 ; DPTR - beginning of the array
 ;===============================================================================
 include    REG515.INC  ;SFR Table
@@ -33,7 +33,7 @@ include    REG515.INC  ;SFR Table
       INC  DPTR
       ;---------------------------
       
-      MOV  R0, #08h
+      MOV  R0, #07h
 OUTERL: 
       MOV  DPTR, #4000h
       MOV  A, R0
